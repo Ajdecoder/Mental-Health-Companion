@@ -74,7 +74,7 @@ const RevenueModel = () => {
 
   return (
     <div className="min-h-screen p-4 md:p-10 mx-auto dark:bg-gray-800 dark:text-white">
-      <motion.div 
+      <motion.div
         className="max-w-7xl mx-auto h-full flex flex-col"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -104,12 +104,12 @@ const RevenueModel = () => {
                 boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
               }}
               viewport={{ once: true }}
-              className="h-full"
+              className="h-full "
             >
               <Card className="rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full bg-white dark:bg-zinc-900 dark:border-zinc-700 flex flex-col">
                 <CardContent className="p-6 flex-1 flex flex-col">
-                  <div className="flex justify-between items-start mb-4">
-                    <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 pr-2">
+                  <div className="flex justify-between items-start mb-5">
+                    <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 pr-2 m-3">
                       {plan.title}
                     </h2>
                     <motion.div whileHover="hover" variants={badgeVariants}>
@@ -133,6 +133,5 @@ const RevenueModel = () => {
     </div>
   );
 };
-
 
 export default RevenueModel;

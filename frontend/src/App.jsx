@@ -17,6 +17,7 @@ import { FaceScan } from "./componenets/Tests/FaceScan";
 import { InputScan } from "./componenets/Tests/InputScan";
 import { UserContext, UserProvider } from "./context/UserContext";
 import RevenueModel from "./componenets/RevenueModel";
+import Footer from "./componenets/Footer";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
@@ -46,7 +47,6 @@ function App() {
       <RefrshHandler setIsAuthenticated={setIsAuthenticated} />
       <UserProvider>
         <Navbar />{" "}
-        {/* ✅ Navbar placed outside <Routes> for global rendering */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/resources" element={<Resources />} />
@@ -67,6 +67,7 @@ function App() {
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
+          <Footer />
       </UserProvider>
     </BrowserRouter>
   );

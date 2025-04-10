@@ -8,6 +8,7 @@ import {
   SparklesIcon,
   UsersIcon,
 } from '@heroicons/react/24/outline';
+import { Emergency } from './Emergency';
 
 const communityPosts = [
   {
@@ -179,23 +180,7 @@ export const Community = () => {
         </motion.div>
 
         {/* Emergency Section */}
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Immediate Support</h2>
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg inline-block">
-            <div className="flex items-center space-x-4">
-              <HeartIcon className="h-8 w-8 text-red-500" />
-              <div className="text-left">
-                <p className="text-lg font-medium text-gray-900 dark:text-white">24/7 Crisis Support Line</p>
-                <p className="text-2xl font-bold text-red-600 dark:text-red-400">1-800-273-8255</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+    <Emergency/>
       </motion.div>
     </div>
   );

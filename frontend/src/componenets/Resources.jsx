@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 import {
   BookOpenIcon,
   PhoneIcon,
@@ -7,50 +7,52 @@ import {
   HeartIcon,
   ChatBubbleLeftRightIcon,
   GlobeAltIcon,
-} from '@heroicons/react/24/outline';
+} from "@heroicons/react/24/outline";
+import { Emergency } from "./Emergency";
 
 const resources = [
   {
-    title: 'Mental Health Articles',
-    description: 'Curated collection of expert-written articles on mental wellness',
+    title: "Mental Health Articles",
+    description:
+      "Curated collection of expert-written articles on mental wellness",
     icon: BookOpenIcon,
-    color: 'bg-blue-100 dark:bg-blue-900',
-    link: '#',
+    color: "bg-blue-100 dark:bg-blue-900",
+    link: "#",
   },
   {
-    title: '24/7 Crisis Hotlines',
-    description: 'Immediate help available through these emergency contacts',
+    title: "24/7 Crisis Hotlines",
+    description: "Immediate help available through these emergency contacts",
     icon: PhoneIcon,
-    color: 'bg-red-100 dark:bg-red-900',
-    link: '#',
+    color: "bg-red-100 dark:bg-red-900",
+    link: "#",
   },
   {
-    title: 'Guided Meditations',
-    description: 'Daily mindfulness exercises and relaxation techniques',
+    title: "Guided Meditations",
+    description: "Daily mindfulness exercises and relaxation techniques",
     icon: MusicalNoteIcon,
-    color: 'bg-green-100 dark:bg-green-900',
-    link: '#',
+    color: "bg-green-100 dark:bg-green-900",
+    link: "#",
   },
   {
-    title: 'Self-Care Tools',
-    description: 'Interactive tools for mood tracking and self-care planning',
+    title: "Self-Care Tools",
+    description: "Interactive tools for mood tracking and self-care planning",
     icon: HeartIcon,
-    color: 'bg-pink-100 dark:bg-pink-900',
-    link: '#',
+    color: "bg-pink-100 dark:bg-pink-900",
+    link: "#",
   },
   {
-    title: 'Support Communities',
-    description: 'Connect with others in safe, moderated discussion forums',
+    title: "Support Communities",
+    description: "Connect with others in safe, moderated discussion forums",
     icon: ChatBubbleLeftRightIcon,
-    color: 'bg-purple-100 dark:bg-purple-900',
-    link: '#',
+    color: "bg-purple-100 dark:bg-purple-900",
+    link: "#",
   },
   {
-    title: 'Global Resources',
-    description: 'Find local mental health services and professionals',
+    title: "Global Resources",
+    description: "Find local mental health services and professionals",
     icon: GlobeAltIcon,
-    color: 'bg-indigo-100 dark:bg-indigo-900',
-    link: '#',
+    color: "bg-indigo-100 dark:bg-indigo-900",
+    link: "#",
   },
 ];
 
@@ -78,7 +80,8 @@ export const Resources = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Your comprehensive guide to mental wellness. Explore curated resources, tools, and support systems to help you on your journey.
+            Your comprehensive guide to mental wellness. Explore curated
+            resources, tools, and support systems to help you on your journey.
           </motion.p>
         </div>
 
@@ -111,7 +114,9 @@ export const Resources = () => {
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                 {resource.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">{resource.description}</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                {resource.description}
+              </p>
               <a
                 href={resource.link}
                 className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium transition-colors"
@@ -134,26 +139,7 @@ export const Resources = () => {
             </motion.div>
           ))}
         </motion.div>
-
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-            Need Immediate Help?
-          </h2>
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg inline-block">
-            <div className="flex items-center space-x-4">
-              <PhoneIcon className="h-8 w-8 text-red-500" />
-              <div className="text-left">
-                <p className="text-lg font-medium text-gray-900 dark:text-white">24/7 Crisis Hotline</p>
-                <p className="text-2xl font-bold text-red-600 dark:text-red-400">1-800-273-8255</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        <Emergency />
       </motion.div>
     </div>
   );

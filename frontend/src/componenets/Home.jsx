@@ -48,7 +48,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+    <div className="min-h-screen pb-0.5 bg-gradient-to-b from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
      
 
       {/* Hero Section */}
@@ -160,7 +160,7 @@ const Home = () => {
       {/* Emergency Help */}
       <motion.div
         whileHover={{ scale: 1.02 }}
-        className="bg-red-50 dark:bg-red-200 p-9 rounded-xl border-2 border-red-200 dark:border-red-300 w-[80%] m-auto mt-6"
+        className="bg-red-50 dark:bg-red-200 p-9 rounded-xl border-2 border-red-200 dark:border-red-300 w-[80%] m-auto mt-6 mb-6"
       >
         <h2 className="text-2xl font-bold text-red-600">
           Need Immediate Help?
