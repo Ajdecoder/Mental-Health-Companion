@@ -85,7 +85,7 @@ const Navbar = () => {
               aria-label="Notifications"
               className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
             >
-              <FaRegBell className="text-white text-xl sm:hidden" />
+              <FaRegBell className="text-white text-xl" />
             </NavLink>
 
             <motion.button

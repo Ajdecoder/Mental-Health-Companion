@@ -38,7 +38,7 @@ const Dashboard = () => {
             alt={userInfo?.name}
             className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-blue-500 dark:border-blue-400"
           />
-          <h1 className="text-2xl font-bold text-red-800 dark:text-red-400 bg-green-600 dark:bg-green-700 rounded">
+          <h1 className="text-2xl font-bold text-red-800 dark:text-red-400 bg-green-600 dark:bg-green-700 rounded-lg p-2">
             {userInfo?.name}
           </h1>
           <h3 className="text-gray-600 dark:text-gray-300">{userInfo?.email}</h3>
