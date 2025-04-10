@@ -7,7 +7,7 @@ import { useTheme } from "../context/UserContext";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
-  
+
   const { theme, setTheme } = useTheme();
 
   const navLinks = [
@@ -47,14 +47,19 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Links */}
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="hidden md:flex space-x-8">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="hidden md:flex space-x-8"
+          >
             {navLinks.map((link) => (
               <motion.div key={link.path} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <NavLink
                   to={link.path}
                   className={({ isActive }) => `
                     text-white hover:text-purple-200 
-                    ${isActive ? 'text-purple-200' : ''} 
+                    ${isActive ? "text-purple-200" : ""} 
                     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500
                   `}
                 >
@@ -68,24 +73,55 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-6">
             {/* Toggle Theme */}
             <button
-              onClick={() => {
-                const nextTheme = theme === "light" ? "dark" : "light";
-                setTheme(nextTheme);
-              }}
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
               aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
               className="text-right p-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
             >
               {theme === "light" ? "🌙 " : "☀️ "}
             </button>
-            <NavLink to="/notifications" aria-label="Notifications" className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+
+            <NavLink
+              to="/notifications"
+              aria-label="Notifications"
+              className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+            >
               <FaRegBell className="text-white text-xl sm:hidden" />
             </NavLink>
-            <NavLink to="/profile" aria-label="Profile" className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+
+            <motion.button
+              aria-label="Profile"
+              onClick={() => setIsOpen(!isOpen)}
+              className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 relative"
+            >
               <FaUserCircle className="text-white text-2xl" />
-            </NavLink>
+              {isOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50">
+                  <NavLink
+                    to="/dashboard"
+                    className={({ isActive }) => `
+                      block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 
+                      ${isActive ? "bg-gray-100" : ""}
+                    `}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Dashboard
+                  </NavLink>
+                  <NavLink
+                    to="/settings"
+                    className={({ isActive }) => `
+                      block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 
+                      ${isActive ? "bg-gray-100" : ""}
+                    `}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Settings
+                  </NavLink>
+                </div>
+              )}
+            </motion.button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Icon */}
           <div className="md:hidden">
             <motion.button
               whileHover={{ scale: 1.1 }}
@@ -94,11 +130,7 @@ const Navbar = () => {
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               className="text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
             >
-              {isMenuOpen ? (
-                <FaTimes className="text-2xl" />
-              ) : (
-                <FaBars className="text-2xl" />
-              )}
+              {isMenuOpen ? <FaTimes className="text-2xl" /> : <FaBars className="text-2xl" />}
             </motion.button>
           </div>
         </div>
@@ -118,7 +150,7 @@ const Navbar = () => {
                 to={link.path}
                 className={({ isActive }) => `
                   text-white hover:text-purple-200 
-                  ${isActive ? 'text-purple-200' : ''} 
+                  ${isActive ? "text-purple-200" : ""} 
                   focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500
                 `}
                 onClick={() => setMenuOpen(false)}
@@ -127,10 +159,18 @@ const Navbar = () => {
               </NavLink>
             </motion.div>
           ))}
-          <NavLink to="/notifications" aria-label="Notifications" className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+          <NavLink
+            to="/notifications"
+            aria-label="Notifications"
+            className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+          >
             <FaRegBell className="text-white text-xl" />
           </NavLink>
-          <NavLink to="/profile" aria-label="Profile" className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+          <NavLink
+            to="/profile"
+            aria-label="Profile"
+            className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+          >
             <FaUserCircle className="text-white text-2xl" />
           </NavLink>
         </div>

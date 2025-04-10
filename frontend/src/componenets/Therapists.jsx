@@ -1,6 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { UserCircleIcon, MapPinIcon, ClockIcon, AcademicCapIcon, CurrencyDollarIcon } from '@heroicons/react/24/outline';
+import {
+  UserCircleIcon,
+  MapPinIcon,
+  ClockIcon,
+  AcademicCapIcon,
+  CurrencyDollarIcon
+} from '@heroicons/react/24/outline';
 
 const therapists = [
   {
@@ -43,7 +49,7 @@ const therapists = [
 
 export const Therapists = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
       <motion.div 
         className="max-w-7xl mx-auto"
         initial={{ opacity: 0 }}
@@ -52,7 +58,7 @@ export const Therapists = () => {
       >
         <div className="text-center mb-16">
           <motion.h1
-            className="text-4xl font-bold text-gray-900 mb-4"
+            className="text-4xl font-bold text-gray-900 dark:text-white mb-4"
             initial={{ y: -20 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
@@ -60,7 +66,7 @@ export const Therapists = () => {
             Professional Therapists
           </motion.h1>
           <motion.p
-            className="text-xl text-gray-600 max-w-2xl mx-auto"
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -92,13 +98,13 @@ export const Therapists = () => {
                 visible: { y: 0, opacity: 1 }
               }}
               whileHover={{ y: -5 }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
+              className="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
             >
-              <div className="relative h-48 bg-gray-100">
+              <div className="relative h-48 bg-gray-100 dark:bg-gray-800">
                 <img 
                   src={therapist.image}
                   alt={therapist.name}
-                  className="w-full h-full object-scale-down"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
                   <h3 className="text-xl font-semibold text-white">{therapist.name}</h3>
@@ -109,25 +115,25 @@ export const Therapists = () => {
               <div className="p-6">
                 <div className="flex items-center space-x-2 mb-4">
                   <AcademicCapIcon className="h-5 w-5 text-purple-600" />
-                  <span className="text-gray-600">{therapist.experience} experience</span>
+                  <span className="text-gray-600 dark:text-gray-300">{therapist.experience} experience</span>
                 </div>
 
                 <div className="flex items-center space-x-2 mb-4">
                   <MapPinIcon className="h-5 w-5 text-blue-600" />
-                  <span className="text-gray-600">{therapist.location}</span>
+                  <span className="text-gray-600 dark:text-gray-300">{therapist.location}</span>
                 </div>
 
                 <div className="flex items-center space-x-2 mb-6">
                   <CurrencyDollarIcon className="h-5 w-5 text-green-600" />
-                  <span className="text-gray-600">{therapist.sessionFee}</span>
+                  <span className="text-gray-600 dark:text-gray-300">{therapist.sessionFee}</span>
                 </div>
 
                 <div className="flex justify-between items-center">
                   <div className="flex items-center space-x-2">
                     <ClockIcon className="h-5 w-5 text-orange-600" />
-                    <span className="text-gray-600">{therapist.availability}</span>
+                    <span className="text-gray-600 dark:text-gray-300">{therapist.availability}</span>
                   </div>
-                  <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition-colors">
                     Book Session
                   </button>
                 </div>
@@ -142,12 +148,12 @@ export const Therapists = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Need Immediate Assistance?</h2>
-          <div className="bg-white rounded-lg p-6 shadow-lg inline-block">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Need Immediate Assistance?</h2>
+          <div className="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-lg inline-block">
             <div className="flex items-center space-x-4">
               <UserCircleIcon className="h-8 w-8 text-red-500" />
               <div className="text-left">
-                <p className="text-lg font-medium text-gray-900">24/7 Crisis Support</p>
+                <p className="text-lg font-medium text-gray-900 dark:text-white">24/7 Crisis Support</p>
                 <p className="text-2xl font-bold text-red-600">1-800-273-8255</p>
               </div>
             </div>
