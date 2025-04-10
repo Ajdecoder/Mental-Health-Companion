@@ -11,9 +11,9 @@ app.use(express.urlencoded({extended:true}))
 app.use(cors());
 app.use('/auth/', authRoutes); // <- NEW LINE
 
-app.all('*', (req, res, next) => {
-    next(new AppError(`Can't find ${req.originalUrl} on the server`, 404));
-});
+app.get('/', (req, res) => {
+    res.send('Hello from the backend!')
+})
 
 app.listen(PORT, () => {
     console.log(`Server is running on ${PORT}`)
