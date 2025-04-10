@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { FaBars, FaTimes, FaUserCircle, FaRegBell } from "react-icons/fa";
+import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { useTheme } from "../context/UserContext";
@@ -142,13 +142,6 @@ const Navbar = () => {
                 <span className="text-xl">{theme === "light" ? "🌙" : "☀️"}</span>
               </motion.button>
 
-              <NavLink 
-                to="/notifications" 
-                className="p-2 rounded-full text-white hover:bg-purple-700/30 transition-colors"
-                aria-label="Notifications"
-              >
-                <FaRegBell className="text-xl" />
-              </NavLink>
 
               <motion.div className="relative">
                 <motion.button
