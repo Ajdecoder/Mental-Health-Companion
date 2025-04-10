@@ -16,15 +16,15 @@ import { TestPage } from "./componenets/MoodTest/TestPage";
 import { FaceScan } from "./componenets/Tests/FaceScan";
 import { InputScan } from "./componenets/Tests/InputScan";
 import { UserContext, UserProvider } from "./context/UserContext";
+import RevenueModel from "./componenets/RevenueModel";
 
 function App() {
-  // 🔥 Load authentication state from localStorage
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
-    return !!localStorage.getItem("user-info"); // Convert to boolean
+    return !!localStorage.getItem("user-info");
   });
 
   useEffect(() => {
-    console.log("Auth state:", isAuthenticated); // Debugging
+    console.log("Auth state:", isAuthenticated);
   }, [isAuthenticated]);
 
   const clientId = import.meta.env.VITE_AUTHID;
@@ -56,7 +56,7 @@ function App() {
           <Route path="/mood-test" element={<TestPage />} />
           <Route path="/face-scan" element={<FaceScan />} />
           <Route path="/text-scan" element={<InputScan />} />
-
+          <Route path="/pricing" element={<RevenueModel />} />
           <Route
             path="/dashboard"
             element={<PrivateRoute element={<Dashboard />} />}
